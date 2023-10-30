@@ -1,23 +1,22 @@
-//spread operator & rest parameter:- syntax:- ...
-//! spread operator : converts a string into character array
-//?example 1
-/*const arr = ["guvi"];
-console.log(...arr);
-//? Example 2 :-
-const arr1 = ["bob","john","doe"]
-const arr2 = ["elisa","satya","leo"]
-const arr3 = [...arr1, ...arr2]
-console.log(arr3);
-*/
-//! rest parameter:- It is used inside the function to consider the remaining values.
-/*function test(a,b,...rest){
-    let sum = 0;
-    for(let i =0;i<rest.length;i=i+1){
-          sum = sum+rest[i];
-    }
-    return sum;
-}
-console.log(test(12,13,14,15,16,17))
-*/
-
-
+var request = new XMLHttpRequest();
+request.open("GET", "https://restcountries.com/v3.1/all", true);
+request.send();
+request.onload = function () {
+  var data = request.response;
+  //console.log(data);
+  var result = JSON.parse(data);
+  console.log(result);
+  //for accessing multiple values use looping
+  //!using for loop
+  for (var i = 0; i < result.length; i++) {
+    console.log(result[i].area);
+  } 
+//!using for in loop
+ for (let index in result){
+    console.log(result[index].region)
+ }
+ //!using for of loop
+ for(let obj of result){
+    console.log(obj.subregion,obj.population,obj.name.common);
+ }
+};

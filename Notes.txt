@@ -6,7 +6,7 @@ array & object destructure
 Object property shorthand
 Template literals
 Arrow functions
-
+------------------------------------------------------------------------------
 var vs let vs const:- 
  
  Hoisting & scoping :- 
@@ -30,7 +30,7 @@ function test(){
     console.log(b,c)
 }
 test();
-
+----------------------------------------------------------------
 array & object destructure:-
 
 //!Array destructring
@@ -97,7 +97,7 @@ console.log(category);
  console.log(locc);
  console.log(person.location);
  */
- 
+ ---------------------------------------------------------------
 Object property shorthand:-
 
 //! normal way to create object
@@ -116,7 +116,7 @@ const order = {
 }
 console.log(order);
 */
-
+----------------------------------------------------------
 Template literals:-
 syntax:- `${expression}`
 //Template literals:- 
@@ -127,7 +127,7 @@ console.log(`the value of a is ${a}
 the value of b is  ${b}
 the value of c is  ${a+b}`);
 */
-
+--------------------------------------------------------
 spread & rest operators:-
 
 //spread operator & rest parameter:- syntax:- ...
@@ -151,9 +151,30 @@ console.log(arr3);
 }
 console.log(test(12,13,14,15,16,17))
 */
-
+----------------------------------------------------------
 for in ,for of 
 
+var request = new XMLHttpRequest();
+request.open("GET", "https://restcountries.com/v3.1/all", true);
+request.send();
+request.onload = function () {
+  var data = request.response;
+  //console.log(data);
+  var result = JSON.parse(data);
+  console.log(result);
+  //for accessing multiple values use looping
+  //!using for loop
+  for (var i = 0; i < result.length; i++) {
+    console.log(result[i].area);
+  } 
+//!using for in loop
+ for (let key in result){
+    console.log(result[key].region)
+ }
+ //!using for of loop
+ for(let val of result){
+    console.log(val.subregion,val.population);
+ }
+};
+-----------------------------------
 
-
-functions:-
