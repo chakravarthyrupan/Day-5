@@ -1,0 +1,32 @@
+Contents:
+var vs let vs const
+block scoping
+spread & rest operators
+array & object destructure
+Object property shorthand
+Template literals
+Arrow functions
+
+var vs let vs const:- 
+ 
+ Hoisting & scoping :- 
+ => developer mistake
+ => if we print a variable without decalration it leads to hoisting.
+ => in var it will print undefined
+ => in let and const it will throw an error
+ => let and const are block variables
+ => var is global variable.
+ 
+ //example for hoisting:-
+ console.log(a);
+ var/let/const a =2;
+
+//example for scoping:-
+function test(){
+  let b =2;
+    if(true){
+        let c =3;
+    }
+    console.log(b,c)
+}
+test();
