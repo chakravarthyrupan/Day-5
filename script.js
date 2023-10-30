@@ -1,53 +1,23 @@
-//!Array destructring
-//const fruits = ["🍎", "🍌", "🍋","🍍","🍊"]
-//!without destructuring
-/*const apple = fruits[0];
-const bannana = fruits[1];
-console.log(apple);
-console.log(bannana);
+//spread operator & rest parameter:- syntax:- ...
+//! spread operator : converts a string into character array
+//?example 1
+/*const arr = ["guvi"];
+console.log(...arr);
+//? Example 2 :-
+const arr1 = ["bob","john","doe"]
+const arr2 = ["elisa","satya","leo"]
+const arr3 = [...arr1, ...arr2]
+console.log(arr3);
 */
-//!with destructuring
-/*const [apple,bannana,mango,pineapple,orange]= fruits;
-console.log(apple);
-console.log(bannana);
-*/
-//*Object destructuring
-/*const obj = {
-    names: "John",
-    age: 30,
-    address:{
-        city:"chennai",
-        state: "TamilNadu"
+//! rest parameter:- It is used inside the function to consider the remaining values.
+/*function test(a,b,...rest){
+    let sum = 0;
+    for(let i =0;i<rest.length;i=i+1){
+          sum = sum+rest[i];
     }
+    return sum;
 }
+console.log(test(12,13,14,15,16,17))
 */
-//!without destructuring
-/*console.log(obj.name);
-console.log(obj.age);
-console.log(obj.address.city);
-*/
-//!with destructuring
-//const {key} = objectname;
-/*const {names,age,address:{city,state}} = obj;
-console.log(names);
-console.log(age);
-console.log(city);
-console.log(state);
-*/
-//? Array of objects destructuring
-const groceryshop = [
-    {item:"Apple",price: 25,  category:"fruits"},
-    {item:"salt",price: 50, category:"misc"},
-    {item:"tomato",price: 120,category:"vegetables"}
-];
-//!without destructuring
-/*console.log(groceryshop);
-console.log(groceryshop[0].item);
-*/
-
-//!with destructuring
-const [{item}]= groceryshop
-console.log(item);
-
 
 
